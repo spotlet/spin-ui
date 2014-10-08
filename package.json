@@ -1,0 +1,14 @@
+{
+  "name": "spin-ui",
+  "version": "0.0.1",
+  "description": "Spin UI Kit",
+  "author": "Joseph Werle <joseph.werle@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "styl": "~0.2.7",
+    "component-builder": "~1.1.13",
+    "component-resolver": "~1.2.4",
+    "component-bundler": "0.0.4",
+    "component": "~1.0.0-rc6"
+  }
+}
