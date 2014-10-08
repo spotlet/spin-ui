@@ -11,6 +11,6 @@
     "component-bundler": "0.0.4",
     "component": "~1.0.0-rc6",
     "jade": "~1.7.0",
-    "serve": "*"
+    "serve": "~1.4.0"
   }
 }
