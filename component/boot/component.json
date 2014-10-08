@@ -1,0 +1,8 @@
+{
+  "name": "boot",
+  "description": "Spin UI Booter",
+  "dependencies": {},
+  "main": "index.js",
+  "locals": ["util"],
+  "scripts": ["index.js"]
+}

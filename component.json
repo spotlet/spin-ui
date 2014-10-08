@@ -1,5 +1,6 @@
 {
   "name": "aupair",
-  "paths": ["."],
-  "dependencies": {}
+  "dependencies": {},
+  "paths": ["component"],
+  "locals": ["boot", "util"]
 }

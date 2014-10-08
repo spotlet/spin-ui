@@ -10,7 +10,7 @@ var fs = require('fs')
   , bundler = require('component-bundler')
   , jade = require('jade')
 
-var opts = {root: __dirname, build: path.join(__dirname, 'build/js')};
+var opts = {root: __dirname, build: path.join(__dirname, 'build/component')};
 var fwrite = fs.writeFileSync;
 var json = require(path.join(opts.root, 'component.json'));
 var bundle = bundler.pages(json);
@@ -53,10 +53,13 @@ resolve(opts.root, {install: true}, function (err, tree) {
     .build(function (err, js) {
       var file = null;
       if (err) { throw err; }
+      else if (!js) { return; }
       // require code
-      if (name === json.locals[0]) {
-        js = build.scripts.require + js;
+      if (name === json.locals[0] && js) {
+        //js = build.scripts.require + js;
+        js = build.scripts.umd('./component/boot', 'spin', js);
       }
+
       file = path.join(opts.build, name + '.js');
       fwrite(file, js, 'utf8');
     });
