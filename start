@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 serve=./node_modules/.bin/serve
-${serve} .
+${serve} . -p ${SPOTLET_HTTP_PORT}
 
