@@ -46,9 +46,9 @@ clean:
 dist: build
 	cp build/spin.* .
 
-.PHONY: spin.html
-serve: spin.html
-spin.html:
-	open 'http://localhost:3000/spin.html'
+.PHONY: index.html
+serve: index.html
+index.html:
+	open 'http://localhost:3000'
 	$(SERVE)
 

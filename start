@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+npm install
 serve=./node_modules/.bin/serve
+make
 ${serve} . -p ${SPOTLET_HTTP_PORT}
 
