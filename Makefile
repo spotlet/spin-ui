@@ -43,6 +43,9 @@ css:
 clean:
 	rm -rf build
 
+dist: build
+	cp build/spin.* .
+
 .PHONY: spin.html
 serve: spin.html
 spin.html:

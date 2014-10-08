@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! test -f spin.css; then
+  exit ${ERROR}
+elif ! test -f spin.js; then
+  exit ${ERROR}
+fi
+

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+VERSION="0.0.1"
+
+echo "spin-ui v${VERSION}"
+
+if ! test -f spin.css || ! test -f spin.js; then
+  exit ${NEEDS_COMPILE}
+fi
+

@@ -5,7 +5,335 @@
     <title>Spin UI Kit</title>
     <link rel="stylesheet" href="/build/spin.css" type="text/css" />
     <script type="text/javascript" charset="utf-8" src="/build/spin.js"></script>
+    <style type="text/css" media="all">
+
+      #widgets {
+        list-style: none;
+        margin-top: 90px;
+        padding: 0;
+      }
+
+      #widgets > li {
+
+      }
+
+      #widgets > li > div:first-child {
+        font-size: 26px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background: rgba(0,0,0,.75);
+        color: #fff;
+      }
+
+      #widgets > li > *:not(*:first-child) {
+        margin: 25px;
+      }
+
+      .header {
+        position: fixed;
+        background-color: rgba(0,0,0,0.9);
+        border-color: rgba(255,255,255,.1);
+        width: 100%;
+        color: #fff;
+        font-weight: 200;
+        top: 0;
+        margin: 0;
+        padding: 15px;
+        z-index: 99;
+      }
+
+    </style>
   </head>
-  <body>
+  <body class="pure-spin">
+    <div>
+      <h1 class="header">Spotlet.io SPIN UI Kit</h1>
+      <ul id="widgets">
+        <li><div>Forms - Checkboxes and Radios</div>
+        <form action="" class="pure-form">
+          <label class="pure-checkbox">
+            <input type="checkbox" value="">
+            Checkbox option
+          </label>
+          <label class="pure-radio">
+            <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">
+            Radio button choice
+          </label>
+          <label class="pure-radio">
+            <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">
+            Radio other choice
+          </label>
+        </form>
+        </li>
+
+        <li><div>Default Inline Form</div>
+        <form action="" class="pure-form">
+          <fieldset>
+            <legend>Legend</legend>
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <label>
+              <input type="checkbox"> Opt in
+            </label>
+            <button class="pure-button" type="submit">Sign in</button>
+          </fieldset>
+        </form>
+        </li>
+
+        <li><div>Aligned Form</div>
+        <form action ="" class="pure-form pure-form-aligned">
+          <fieldset>
+            <div class="pure-control-group">
+              <label>Username</label>
+              <input type="text" placeholder="Username">
+            </div>
+
+            <div class="pure-control-group">
+              <label>Password</label>
+              <input type="password" placeholder="Password">
+            </div>
+
+            <div class="pure-control-group">
+              <label>Email Address</label>
+              <input type="text" placeholder="Email Address">
+            </div>
+
+            <div class="pure-control-group">
+              <label>Disabled</label>
+              <input type="text" disabled="" placeholder="Disabled input here...">
+            </div>
+
+            <div class="pure-controls">
+              <label class="pure-checkbox">
+                <input type="checkbox"> Check me out
+              </label>
+              <button class="pure-button" type="submit">Submit</button>
+            </div>
+          </fieldset>
+        </form>
+        </li>
+
+        <li><div>Form - Stacked</div>
+        <form action="" class="pure-form pure-form-stacked">
+          <fieldset>
+            <legend>Legend</legend>
+            <label>Full Name</label>
+            <input type="text">
+            <aside class="pure-form-message">Block help text</aside>
+            <label>E-Mail</label>
+            <input type="email" required>
+            <aside class="pure-form-message-inline">Required</aside>
+            <label>State</label>
+            <select class="pure-input-medium">
+              <option>AL</option>
+              <option>CA</option>
+              <option>IL</option>
+              <option>MD</option>
+              <option>NY</option>
+            </select>
+            <label class="pure-checkbox">
+              <input type="checkbox"> I've read the terms and conditions
+            </label>
+            <button class="pure-button notice" type="submit">Submit</button>
+          </fieldset>
+        </form>
+        </li>
+
+        <li><div>Form - Grouped Inputs</div>
+        <form action="" class="pure-form">
+          <fieldset class="pure-group">
+            <input type="text" placeholder="Username" class="pure-input-1-2">
+            <input type="text" placeholder="Password" class="pure-input-1-2">
+            <input type="text" placeholder="Email" class="pure-input-1-2">
+          </fieldset>
+          <fieldset class="pure-group">
+            <input type="text" placeholder="Another Group" class="pure-input-1-2">
+            <input type="text" placeholder="More Stuff" class="pure-input-1-2">
+          </fieldset>
+          <button class="pure-button pure-input-1-2" type="submit">Sign in</button>
+        </form>
+        </li>
+
+        <li><div>Rounded Form</div>
+        <form action="" class="pure-form">
+          <input type="text" class="pure-input-rounded">
+          <button class="pure-button" type="submit">Search</button>
+        </form>
+        </li>
+
+        <li class="buttons-buttons"><div>Buttons</div>
+        <p> <button class="pure-button">Start</button> </p>
+        <button class="pure-button pure-button-primary">Primary</button>
+        </li>
+
+        <li><div>Tables - Default</div>
+        <table class="pure-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dodge</td>
+              <td>Ram 1500</td>
+              <td>2010</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Honda</td>
+              <td>Accord</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tesla</td>
+              <td>Model S</td>
+              <td>2013</td>
+            </tr>
+          </tbody>
+        </table>
+        </li>
+
+        <li><div>Table - Bordered</div>
+        <table class="pure-table pure-table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dodge</td>
+              <td>Ram 1500</td>
+              <td>2010</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Honda</td>
+              <td>Accord</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tesla</td>
+              <td>Model S</td>
+              <td>2013</td>
+            </tr>
+          </tbody>
+        </table>
+        </li>
+        <li><div>Table - Horizontal</div>
+        <table class="pure-table pure-table-horizontal">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dodge</td>
+              <td>Ram 1500</td>
+              <td>2010</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Honda</td>
+              <td>Accord</td>
+              <td>2009</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tesla</td>
+              <td>Model S</td>
+              <td>2013</td>
+            </tr>
+          </tbody>
+        </table>
+        </li>
+
+        <li><div>Table - Striped</div>
+        <table class="pure-table pure-table-horizontal">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pure-table-odd">
+              <td>1</td>
+              <td>Dodge</td>
+              <td>Ram 1500</td>
+              <td>2010</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Honda</td>
+              <td>Accord</td>
+              <td>2009</td>
+            </tr>
+            <tr class="pure-table-odd">
+              <td>3</td>
+              <td>Tesla</td>
+              <td>Model S</td>
+              <td>2013</td>
+            </tr>
+          </tbody>
+        </table>
+        </li>
+
+        <li class=" double-wide "><div>Menus - Horizontal Menu</div>
+        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <a class="pure-menu-heading">Site Title</a>
+          <ul>
+            <li><a>Home</a></li>
+            <li class="pure-menu-selected"><a>Flickr</a></li>
+            <li><a>Sports</a></li>
+            <li><a>Mail</a></li>
+            <li class="pure-menu-disabled"><a>Disabled</a></li>
+          </ul>
+        </div>
+        </li>
+
+        <li><div>Menus - Vertical Menu</div>
+        <div style="width: 500px" class="pure-menu pure-menu-open">
+          <ul>
+            <li class="pure-menu-heading">Yahoo! Sites</li>
+            <li><a>Home</a></li>
+            <li class="pure-menu-selected"><a>Flickr</a></li>
+            <li><a>Messenger</a></li>
+            <li><a>Sports</a></li>
+            <li class="pure-menu-separator"></li>
+            <li><a>Finance</a></li>
+          </ul>
+        </div>
+        </li>
+
+        <li><div>Menus - Paginator</div>
+        <ul class="pure-paginator">
+          <li><a class="pure-button prev">«</a></li>
+          <li><a class="pure-button">1</a></li>
+          <li><a class="pure-button pure-button-selected">2</a></li>
+          <li><a class="pure-button">3</a></li>
+          <li><a class="pure-button next">»</a></li>
+        </ul>
+        </li>
+
+      </ul>
+    </div>
   </body>
 </html>
