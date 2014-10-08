@@ -32,7 +32,9 @@ resolve(opts.root, {install: true}, function (err, tree) {
     .use('styles', build.plugins.css())
     .end(function (err, string) {
       if (err) throw err;
-      fs.writeFileSync(path.join(opts.build, name +'.css'), string);
+      if (string) {
+        fs.writeFileSync(path.join(opts.build, name +'.css'), string);
+      }
     });
 
     build.scripts(bundles[name])
