@@ -7,14 +7,6 @@ STYLS = $(wildcard styl/*)
 
 .PHONY: build
 build: clean styl component css js
-	rm -f build/spin.{js,css}
-	@# css
-	{ cat build/css/* >> build/spin.css; } || true
-	{ cat build/styl/* >> build/spin.css; } || true
-	{ cat build/component/*.css >> build/spin.css; } || true
-	@# javascript
-	{ cat build/js/* >> build/spin.js; } || true
-	{ cat build/component/* >> build/spin.js; } || true
 
 .PHONY: styl
 styl: $(STYLS)
@@ -33,18 +25,25 @@ $(STYLS):
 .PHONY: js
 js:
 	@mkdir -p build/js
+	rm -f build/spin.js
 	{ ls js/* 2>/dev/null && cp js/* build/js; } || true
+	{ cat build/js/* >> build/spin.js; } || true
+	{ cat build/component/* >> build/spin.js; } || true
 
 .PHONY: css
 css:
 	@mkdir -p build/css
+	rm -f build/spin.css
+	{ cat build/css/* >> build/spin.css; } || true
+	{ cat build/styl/* >> build/spin.css; } || true
+	{ cat build/component/*.css >> build/spin.css; } || true
 	cp css/* build/css
 
 clean:
 	rm -rf build
 
 dist: build
-	cp build/spin.* .
+	cp build/spin.* public/
 
 .PHONY: index.html
 serve: index.html
