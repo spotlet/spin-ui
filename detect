@@ -5,7 +5,7 @@ VERSION="0.0.1"
 echo "spin-ui v${VERSION}"
 
 if ! test -f spin.css || ! test -f spin.js; then
-  if ! command -v node > /dev/null 2>&1 || ! command -v npm > /dev/null 2&1; then
+  if ! command -v node > /dev/null 2>&1 || ! command -v npm > /dev/null 2>&1; then
     echo >&2 "error: Missing node/npm"
     exit ${ERROR}
   fi
