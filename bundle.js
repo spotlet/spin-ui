@@ -10,7 +10,7 @@ var fs = require('fs')
   , bundler = require('component-bundler')
   , jade = require('jade')
 
-var opts = {root: __dirname, build: path.join(__dirname, 'build/component')};
+var opts = {root: __dirname, build: path.join(__dirname, 'out/component')};
 var fwrite = fs.writeFileSync;
 var json = require(path.join(opts.root, 'component.json'));
 var bundle = bundler.pages(json);
