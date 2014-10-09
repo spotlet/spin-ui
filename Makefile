@@ -6,14 +6,16 @@ SERVE = ./node_modules/.bin/serve
 STYLS = $(wildcard styl/*)
 
 dist:
-	cp out/*.css public/css
-	cp out/*.js public/js
-	cp fonts/* public/fonts
+	cp out/*.css public/css/
+	cp out/*.js public/js/
+	cp fonts/* public/fonts/
 
 .PHONY:
 public:
 	mkdir -p public
-	mkdir -p public/{js,css,fonts}
+	mkdir -p public/js
+	mkdir -p public/css
+	mkdir -p public/fonts
 
 .PHONY: out
 out: styl component css js
