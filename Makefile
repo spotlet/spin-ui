@@ -6,7 +6,7 @@ SERVE = ./node_modules/.bin/serve
 STYLS = $(wildcard styl/*)
 
 .PHONY: build
-build: clean styl component css js
+build: clean styl component css js font
 
 .PHONY: styl
 styl: $(STYLS)
@@ -43,7 +43,10 @@ clean:
 	rm -rf build
 
 dist: build
+	rm -rf public
+	mkdir public
 	cp build/spin.* public/
+	cp font/* public/
 
 .PHONY: index.html
 serve: index.html
