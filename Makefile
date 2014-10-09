@@ -5,8 +5,16 @@ SERVE = ./node_modules/.bin/serve
 
 STYLS = $(wildcard styl/*)
 
+dist: build
+	rm -rf public
+	mkdir -p public
+	mkdir -p public/{js,css,fonts}
+	cp build/*.css public/css
+	cp build/*.js public/js
+	cp fonts/* public/fonts
+
 .PHONY: build
-build: clean styl component css js font
+build: styl component css js
 
 .PHONY: styl
 styl: $(STYLS)
@@ -23,7 +31,7 @@ $(STYLS):
 	$(STYL) -w < $(@) > build/styl/$(shell basename $(@:.styl=.css))
 
 .PHONY: js
-js:
+js: component
 	@mkdir -p build/js
 	rm -f build/spin.js
 	{ ls js/* 2>/dev/null && cp js/* build/js; } || true
@@ -31,7 +39,7 @@ js:
 	{ cat build/component/* >> build/spin.js; } || true
 
 .PHONY: css
-css:
+css: $(STYLS)
 	@mkdir -p build/css
 	rm -f build/spin.css
 	{ cat build/css/* >> build/spin.css; } || true
@@ -41,12 +49,6 @@ css:
 
 clean:
 	rm -rf build
-
-dist: build
-	rm -rf public
-	mkdir public
-	cp build/spin.* public/
-	cp font/* public/
 
 .PHONY: index.html
 serve: index.html
