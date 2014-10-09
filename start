@@ -2,6 +2,6 @@
 
 npm install
 serve=./node_modules/.bin/serve
-make
+make dist
 ${serve} . -p ${SPOTLET_HTTP_PORT}
 
