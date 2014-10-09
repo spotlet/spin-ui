@@ -5,50 +5,50 @@ SERVE = ./node_modules/.bin/serve
 
 STYLS = $(wildcard styl/*)
 
-dist: build
+dist: out
 	rm -rf public
 	mkdir -p public
 	mkdir -p public/{js,css,fonts}
-	cp build/*.css public/css
-	cp build/*.js public/js
+	cp out/*.css public/css
+	cp out/*.js public/js
 	cp fonts/* public/fonts
 
-.PHONY: build
-build: styl component css js
+.PHONY: out
+out: styl component css js
 
 .PHONY: styl
 styl: $(STYLS)
 
 .PHONY: component
 component: $(COMPONENTS)
-	@mkdir -p build/component
+	@mkdir -p out/component
 	$(COMP) install
 	node bundle
 
 .PHONY: $(STYLS)
 $(STYLS):
-	@mkdir -p build/styl
-	$(STYL) -w < $(@) > build/styl/$(shell basename $(@:.styl=.css))
+	@mkdir -p out/styl
+	$(STYL) -w < $(@) > out/styl/$(shell basename $(@:.styl=.css))
 
 .PHONY: js
 js: component
-	@mkdir -p build/js
-	rm -f build/spin.js
-	{ ls js/* 2>/dev/null && cp js/* build/js; } || true
-	{ cat build/js/* >> build/spin.js; } || true
-	{ cat build/component/* >> build/spin.js; } || true
+	@mkdir -p out/js
+	rm -f out/spin.js
+	{ ls js/* 2>/dev/null && cp js/* out/js; } || true
+	{ cat out/js/* >> out/spin.js; } || true
+	{ cat out/component/* >> out/spin.js; } || true
 
 .PHONY: css
 css: $(STYLS)
-	@mkdir -p build/css
-	rm -f build/spin.css
-	{ cat build/css/* >> build/spin.css; } || true
-	{ cat build/styl/* >> build/spin.css; } || true
-	{ cat build/component/*.css >> build/spin.css; } || true
-	cp css/* build/css
+	@mkdir -p out/css
+	rm -f out/spin.css
+	{ cat out/css/* >> out/spin.css; } || true
+	{ cat out/styl/* >> out/spin.css; } || true
+	{ cat out/component/*.css >> out/spin.css; } || true
+	cp css/* out/css
 
 clean:
-	rm -rf build
+	rm -rf out
 
 .PHONY: index.html
 serve: index.html
